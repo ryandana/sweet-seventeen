@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Poppins', system-ui, sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .font-poppins {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+  
+  .font-dancing {
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .polaroid-card {
+    @apply transform-gpu transition-all duration-300 hover:shadow-2xl;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+  }
+  
+  .polaroid-card:hover {
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+  }
+  
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-xl border border-white/30 shadow-2xl;
+  }
+  
+  .glass-button {
+    @apply bg-white/60 backdrop-blur-sm border border-white/40 hover:bg-white/80 transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .transform-gpu {
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+  
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.5);
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive text sizing */
+@supports (font-size: clamp(1rem, 4vw, 1.5rem)) {
+  .text-responsive {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+  
+  .text-responsive-lg {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+  }
+  
+  .text-responsive-xl {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+}
+
+/* Glass morphism effects */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(168, 85, 247, 0.15);
+}
+
+/* Polaroid photo styling */
+.polaroid-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* Enhanced glass effects for better readability */
+@supports (backdrop-filter: blur(20px)) {
+  .macos-glass {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .polaroid-card {
+    transform: none !important;
+  }
+  
+  .polaroid-card:hover {
+    transform: scale(1.02) !important;
+  }
+  
+  /* Mobile music player positioning */
+  .mobile-player {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 2rem);
+    max-width: 24rem;
+  }
+}
+
+/* Volume slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-track {
+  background: rgba(168, 85, 247, 0.2);
+  height: 4px;
+  border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(45deg, #a855f7, #3b82f6);
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-track {
+  background: rgba(168, 85, 247, 0.2);
+  height: 4px;
+  border-radius: 2px;
+  border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: linear-gradient(45deg, #a855f7, #3b82f6);
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+/* Better glass readability */
+.glass-readable {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #4c1d95;
+}
+
+/* Floating elements animation */
+.floating-wish {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Quiz button hover effects */
+.quiz-option {
+  transition: all 0.3s ease;
+}
+
+.quiz-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.15);
+}
