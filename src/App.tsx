@@ -59,7 +59,7 @@ function App() {
   const typingIntervalRef = useRef<number | null>(null);
 
   const fullText =
-    "Happy Birthday, Beautiful! 🎉\n\nAnother year of amazing memories and countless reasons to smile. You make every day magical! ✨\n\nI hope this special day brings you all the happiness you deserve and that all your dreams come true. Here's to another year of adventures, laughter, and love!";
+    "Happy Birthday 🎉\n\n Semoga kamu selalu sehat, bahagia, dan makin sayang sama aku tiap hari (harus ya! 😝) ✨\n\nSemoga semua yang kamu impiin pelan-pelan jadi nyata ya, dan semoga tahun ini penuh hal-hal indah (termasuk aku 😁) \n\nLove youu, selalu! 💕🎂";
 
   const playlist: Song[] = [
     {
@@ -98,10 +98,10 @@ function App() {
     },
     {
       id: 5,
-      title: "Birthday Dreams",
-      artist: "Celebration Band",
+      title: "You'll be in my heart",
+      artist: "NIKI",
       duration: "",
-      url: "/chinese.mp3",
+      url: "/inmyheart.mp3",
       thumbnail:
         "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=100",
     },
@@ -110,105 +110,118 @@ function App() {
   const galleryPhotos = [
     {
       id: 1,
-      url: "https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Our first adventure together 💕",
+      url: "/1.jpg",
+      description: "Cowboy 🤠",
     },
     {
       id: 2,
-      url: "https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Beach sunset memories 🌅",
+      url: "/2.jpg",
+      description: "Bapaknya ikut anjay 😂",
     },
     {
       id: 3,
-      url: "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Dancing under the stars ✨",
+      url: "/3.jpg",
+      description: "Day 1 kalah challange 😁",
     },
     {
       id: 4,
-      url: "https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Coffee shop conversations ☕",
+      url: "/4.jpg",
+      description: "Seramnyo 👻",
     },
     {
       id: 5,
-      url: "https://images.pexels.com/photos/1024976/pexels-photo-1024976.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Mountain hiking adventures 🏔️",
+      url: "/5.jpg",
+      description: "Cantik banget 😍",
     },
     {
       id: 6,
-      url: "https://images.pexels.com/photos/1559825/pexels-photo-1559825.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Cozy movie nights 🎬",
+      url: "/6.jpg",
+      description: "Si paling literasi 📚",
     },
     {
       id: 7,
-      url: "https://images.pexels.com/photos/1462636/pexels-photo-1462636.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "City exploration days 🏙️",
+      url: "/7.jpg",
+      description: "Pemuda Sibuk 🏃‍♂️",
     },
     {
       id: 8,
-      url: "https://images.pexels.com/photos/1559484/pexels-photo-1559484.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Garden picnic moments 🌸",
+      url: "/8.jpg",
+      description: "Membadut 🤡",
     },
     {
       id: 9,
-      url: "https://images.pexels.com/photos/1024992/pexels-photo-1024992.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Rainy day cuddles ☔",
+      url: "/9.jpg",
+      description: "Nice try lah 😅",
     },
     {
       id: 10,
-      url: "https://images.pexels.com/photos/1264208/pexels-photo-1264208.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Festival fun times 🎪",
+      url: "/10.jpg",
+      description: "Hidup sehat 🚶",
     },
     {
       id: 11,
-      url: "https://images.pexels.com/photos/1559823/pexels-photo-1559823.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Bookstore browsing 📚",
+      url: "/11.jpg",
+      description: "Lucu banget 🥰",
     },
     {
       id: 12,
-      url: "https://images.pexels.com/photos/1462635/pexels-photo-1462635.jpeg?auto=compress&cs=tinysrgb&w=800",
-      description: "Sunset drive memories 🚗",
+      url: "/12.jpg",
+      description: "Salam KSHDI 🙏🏻",
     },
   ];
 
   const quizQuestions: QuizQuestion[] = [
     {
       id: 1,
-      question: "What's my favorite thing about spending time with you?",
+      question: "Apa yang paling aku seneng lakuin kalo bareng sama kamu?",
       options: [
-        "Your beautiful smile",
-        "Your amazing laugh",
-        "Your kind heart",
-        "All of the above",
+        "Kokop",
+        "Cubit Pipi",
+        "Peluk",
+        "Semua kecuali kokop",
       ],
       correct: 3,
       explanation:
-        "It's impossible to choose just one thing - everything about you is wonderful! 💕",
+        "Ga baik kokop kokop",
     },
     {
       id: 2,
-      question: "What would be the perfect birthday gift for you?",
+      question: "Kita paling suka ngapain kalo lagi santai?",
       options: [
-        "A surprise adventure",
-        "A cozy day together",
-        "Something handmade with love",
-        "Quality time and memories",
+        "Deep Talk",
+        "Ngegame & Nonton",
+        "Sleepcall",
+        "Belajar Bareng",
       ],
-      correct: 3,
+      correct: 1,
       explanation:
-        "The best gifts aren't things - they're moments we share together! ✨",
+        "Masih basic ini",
     },
     {
       id: 3,
       question:
-        "If we could go anywhere in the world right now, where would it be?",
+        "Tebak nomer rumahku berapa",
       options: [
-        "A tropical beach",
-        "A cozy mountain cabin",
-        "A bustling city",
-        "Anywhere, as long as we're together",
+        "17",
+        "10",
+        "7",
+        "20",
       ],
       correct: 3,
-      explanation: "Home is wherever you are! 🏠💖",
+      explanation: "Kalo ga salah 20 ya",
+    },
+    {
+      id: 4,
+      question:
+        "Physical Touch yang paling sering kita lakuin itu apa?",
+      options: [
+        "Pegangan Tangan",
+        "Kokop, astagfirullah",
+        "Pangku",
+        "Peluk",
+      ],
+      correct: 0,
+      explanation: "Kokop itu ga baik",
     },
   ];
 
@@ -755,7 +768,7 @@ function App() {
               Fun Quiz Time! 🎯
             </h2>
             <p className="text-purple-600 text-xl">
-              Let's see how well we know each other!
+              Ayo kita liat seberapa kamu inget tentang hubungan kita 😄
             </p>
           </motion.div>
 
@@ -769,11 +782,11 @@ function App() {
             <div className="mb-6">
               <div className="flex justify-between items-center mb-4">
                 <span className="text-purple-800 font-medium">
-                  Question {currentQuiz + 1} of {quizQuestions.length}
+                  Pertanyaan {currentQuiz + 1} dari {quizQuestions.length}
                 </span>
                 <div className="flex items-center gap-4">
                   <span className="text-purple-800 font-medium">
-                    Score: {quizScore}/{quizQuestions.length}
+                    Skor: {quizScore}/{quizQuestions.length}
                   </span>
                   <button
                     onClick={restartQuiz}
@@ -871,10 +884,10 @@ function App() {
                     transition={{ type: "spring", damping: 20, stiffness: 300 }}
                   >
                     <p className="text-2xl font-bold text-purple-800 mb-2">
-                      Quiz Complete! 🎉
+                      Quiz Selesai! 🎉
                     </p>
                     <p className="text-purple-700">
-                      You scored {quizScore} out of {quizQuestions.length}!
+                      Skormu {quizScore} dari {quizQuestions.length}!
                     </p>
                   </motion.div>
                 )}

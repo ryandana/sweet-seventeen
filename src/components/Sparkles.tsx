@@ -1,34 +1,44 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+type Sparkle = {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+  delay: number;
+  duration: number;
+  moveX: number;
+  moveY: number;
+  rotate: number;
+};
+
+const SPARKLE_COUNT = 50;
+
 const Sparkles = () => {
-  const [sparkles, setSparkles] = useState<
-    Array<{
-      id: number;
-      x: number;
-      y: number;
-      size: number;
-      delay: number;
-      duration: number;
-    }>
-  >([]);
+  const [sparkles, setSparkles] = useState<Sparkle[]>([]);
 
   useEffect(() => {
     const generateSparkles = () => {
-      const newSparkles = Array.from({ length: 50 }, (_, i) => ({
-        id: i,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        size: Math.random() * 6 + 2,
-        delay: Math.random() * 3,
-        duration: Math.random() * 3 + 2,
-      }));
+      const newSparkles: Sparkle[] = Array.from(
+        { length: SPARKLE_COUNT },
+        (_, i) => ({
+          id: i,
+          x: Math.random() * 100,
+          y: Math.random() * 100,
+          size: Math.random() * 6 + 2,
+          delay: Math.random() * 3,
+          duration: Math.random() * 8 + 6, // Slow, between 6-14s
+          moveX: (Math.random() - 0.5) * 40, // Move max ±20vw
+          moveY: (Math.random() - 0.5) * 40, // Move max ±20vh
+          rotate: Math.random() * 360,
+        })
+      );
       setSparkles(newSparkles);
     };
 
     generateSparkles();
     const interval = setInterval(generateSparkles, 10000); // Regenerate every 10 seconds
-
     return () => clearInterval(interval);
   }, []);
 
@@ -48,15 +58,15 @@ const Sparkles = () => {
             rotate: 0,
           }}
           animate={{
-            x: [0, (Math.random() - 0.5) * 200],
-            y: [0, (Math.random() - 0.5) * 200],
+            x: [0, sparkle.moveX, 0],
+            y: [0, sparkle.moveY, 0],
             opacity: [0.7, 1, 0.7],
             scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
+            rotate: [0, sparkle.rotate, 0],
           }}
           transition={{
             delay: sparkle.delay,
-            duration: sparkle.duration * 3,
+            duration: sparkle.duration,
             repeat: Infinity,
             repeatType: "reverse",
             ease: "easeInOut",

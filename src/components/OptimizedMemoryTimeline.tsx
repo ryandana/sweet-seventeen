@@ -8,47 +8,47 @@ const OptimizedMemoryTimeline = memo(() => {
     {
       id: 1,
       title: "First Date",
-      date: "That magical evening",
+      date: "",
       description:
-        "When we first met and I knew you were special. The way you laughed at my terrible jokes made my heart skip a beat. 💕",
+        "First date yang penuh rasa suka dan duka 🙂, tapi untung kita bisa cepet akrabnya 💕 awal awal masih ga nyangka",
       color: "from-purple-200 to-pink-200",
       emoji: "🌹",
     },
     {
       id: 2,
-      title: "Our First Trip",
-      date: "Adventure begins",
+      title: "First Trip",
+      date: "",
       description:
-        "Exploring new places together, getting lost but finding ourselves. Every wrong turn led to a new memory. ✈️",
+        "First trip kita ke Living tapi masih kaku banget, lama lama baru bisa akrab dan enjoy bareng, kinda nervous at first 😄",
       color: "from-blue-200 to-purple-200",
       emoji: "🗺️",
     },
     {
       id: 3,
       title: "Movie Nights",
-      date: "Cozy evenings",
+      date: "",
       description:
-        "Countless nights of terrible movies, amazing snacks, and the best company. You make even the worst films perfect. 🍿",
+        "Anjay ini first time nonton sama kamu, seru bet rasanya, disini aku ngerasa kita makin nyaman bareng, ngobrol lebih lepas rasanya",
       color: "from-pink-200 to-purple-200",
       emoji: "🎬",
     },
     {
       id: 4,
-      title: "Cooking Disasters",
-      date: "Kitchen chaos",
+      title: "Kulineran",
+      date: "",
       description:
-        "Remember when we tried to make that fancy dinner? We may have failed at cooking, but we succeeded at laughing. 👨‍🍳",
+        "Paling seneng kalo nyoba banyak jajan atau makanan enak bareng kamu, kalo aku sendirian paling mager duluan, dan aku paling males ngomong buat mesen makanan 😅",
       color: "from-yellow-200 to-pink-200",
       emoji: "🔥",
     },
     {
       id: 5,
-      title: "Lazy Sundays",
-      date: "Perfect mornings",
+      title: "Badai Menerjang",
+      date: "",
       description:
-        "Those slow mornings when we had nowhere to be. Just us, coffee, and endless conversations about everything and nothing. ☕",
+        "Semua itu cuma awalan doang, kita masih banyak banget yang harus dilalui, tapi aku yakin kita bisa lewatin semua ini bareng bareng asal bisa saling sabar sama memaafkan.",
       color: "from-orange-200 to-purple-200",
-      emoji: "☀️",
+      emoji: "⛈️",
     },
     {
       id: 6,
@@ -79,9 +79,8 @@ const OptimizedMemoryTimeline = memo(() => {
     },
   ];
 
-  // Responsive check without external dependency
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-  const visibleMemories = isMobile ? memories.slice(0, 4) : memories;
+  // Always show only the first 5 memories
+  const visibleMemories = memories.slice(0, 5);
 
   return (
     <div className="relative w-full max-w-full overflow-x-auto scrollbar-thin scrollbar-thumb-purple-200 scrollbar-track-transparent">
