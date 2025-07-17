@@ -1,6 +1,5 @@
-
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const InteractiveCake = () => {
   const [candlesLit, setCandlesLit] = useState(true);
@@ -24,7 +23,7 @@ const InteractiveCake = () => {
   return (
     <div className="min-h-screen flex items-center justify-center py-16 px-4">
       <div className="text-center max-w-2xl mx-auto">
-        <motion.h2 
+        <motion.h2
           className="font-handwriting text-4xl md:text-5xl text-purple-600 mb-12"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +66,7 @@ const InteractiveCake = () => {
                 <div key={i} className="relative">
                   {/* Candle stick */}
                   <div className="w-2 h-12 bg-gradient-to-t from-red-400 to-red-300 rounded-full"></div>
-                  
+
                   {/* Flame */}
                   <AnimatePresence>
                     {candlesLit && (
@@ -81,12 +80,12 @@ const InteractiveCake = () => {
                           className="w-3 h-4 bg-gradient-to-t from-orange-400 to-yellow-300 rounded-full"
                           animate={{
                             scale: [1, 1.1, 1],
-                            opacity: [0.8, 1, 0.8]
+                            opacity: [0.8, 1, 0.8],
                           }}
                           transition={{
                             duration: 0.8,
                             repeat: Infinity,
-                            delay: i * 0.1
+                            delay: i * 0.1,
                           }}
                         />
                       </motion.div>
@@ -98,11 +97,15 @@ const InteractiveCake = () => {
                     {!candlesLit && (
                       <motion.div
                         initial={{ opacity: 0, y: 0, scale: 0.5 }}
-                        animate={{ 
-                          opacity: [0, 0.7, 0], 
-                          y: [-10, -30, -50], 
+                        animate={{
+                          opacity: [0, 0.7, 0],
+                          y: [-10, -30, -50],
                           scale: [0.5, 1, 1.5],
-                          x: [0, Math.random() * 10 - 5, Math.random() * 20 - 10]
+                          x: [
+                            0,
+                            Math.random() * 10 - 5,
+                            Math.random() * 20 - 10,
+                          ],
                         }}
                         transition={{ duration: 2, delay: i * 0.1 }}
                         className="absolute -top-3 left-1/2 transform -translate-x-1/2"
@@ -130,13 +133,13 @@ const InteractiveCake = () => {
                     animate={{
                       scale: [0, 1.2, 0],
                       opacity: [0, 1, 0],
-                      rotate: [0, 180, 360]
+                      rotate: [0, 180, 360],
                     }}
                     transition={{
                       duration: 2,
                       repeat: Infinity,
                       delay: i * 0.2,
-                      ease: "easeInOut"
+                      ease: "easeInOut",
                     }}
                   />
                 ))}
@@ -150,9 +153,9 @@ const InteractiveCake = () => {
               onClick={blowCandles}
               disabled={!candlesLit}
               className={`px-6 py-3 rounded-full font-handwriting text-lg ${
-                candlesLit 
-                  ? 'bg-gradient-to-r from-purple-400 to-pink-400 text-white hover:from-purple-500 hover:to-pink-500' 
-                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                candlesLit
+                  ? "bg-gradient-to-r from-purple-400 to-pink-400 text-white hover:from-purple-500 hover:to-pink-500"
+                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
               } transition-all duration-300 shadow-lg`}
               whileHover={candlesLit ? { scale: 1.05 } : {}}
               whileTap={candlesLit ? { scale: 0.95 } : {}}
@@ -187,8 +190,9 @@ const InteractiveCake = () => {
                   Your Wish Has Been Made! ⭐
                 </h3>
                 <p className="text-purple-600 leading-relaxed">
-                  May this new year bring you endless joy, adventures, and all the love your heart can hold. 
-                  You deserve every beautiful moment that's coming your way! 💜
+                  Semoga di usia yang baru ini kamu dapetin banyak kebahagiaan,
+                  petualangan seru, dan cinta yang nggak ada habisnya. Kamu
+                  pantes banget dapetin momen-momen indah yang bisa dikenang selamanya! 💜
                 </p>
               </motion.div>
             )}

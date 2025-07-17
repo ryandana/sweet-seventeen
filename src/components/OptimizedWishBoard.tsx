@@ -15,11 +15,11 @@ const OptimizedWishBoard = memo(() => {
 
   // Reduced to 5 wishes for better performance and less clutter
   const wishTexts = [
-    "May your dreams come true ✨",
-    "Love, laughter, and endless joy 💕",
-    "You deserve all the happiness 🎈",
-    "Here's to your brightest year yet 🌈",
-    "Celebrating the wonderful person you are 🎂"
+    "Semoga semua keinginan kamu tercapai ✨",
+    "Semoga hidup kamu selalu penuh hal hal yang positif 💕",
+    "Kamu pantes buat dapetin kebahagiaan yang banyak 🎈",
+    "Semoga tahun ini jadi tahun paling seru buat kamu 🌈",
+    "Semoga panjang umur, inget aku seumur hidupmu yaa 🎂"
   ];
 
   const colors = [
@@ -198,10 +198,10 @@ const OptimizedWishBoard = memo(() => {
               style={{ willChange: 'transform' }}
             >
               <h3 className="font-handwriting text-2xl text-purple-700 mb-2">
-                Make a Wish! 🌟
+                Buat keinginanmu 🌟
               </h3>
               <p className="text-purple-600 text-sm leading-relaxed">
-                Drag the wishes around and make one your own
+                Kamu juga bisa buat keinginanmu sendiri
               </p>
             </motion.div>
           </div>

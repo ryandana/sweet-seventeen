@@ -223,6 +223,18 @@ function App() {
       correct: 0,
       explanation: "Kokop itu ga baik",
     },
+    {
+  id: 5,
+  question: "Kalau aku lagi bad mood, kamu tuh harus ngapain?",
+  options: [
+    "Ngasih peluk sama elus-elus",
+    "Ngajakin aku makan enak",
+    "Bikin aku ketawa pake jokes receh",
+    "Diemin dulu baru pelan-pelan tanya kenapa",
+  ],
+  correct: 0,
+  explanation: "Sentuhan kamu tuh obat paling ampuh 🥺",
+}
   ];
 
   useEffect(() => {
@@ -625,10 +637,10 @@ function App() {
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-purple-800 mb-4">
-            Reasons You're Loved
+            Alasan aku suka kamu 💜
           </h2>
           <p className="text-purple-600 text-xl">
-            A few of the countless reasons you are cherished!
+            100 Hal tentang kamu yang bikin aku jatuh cinta setiap hari
           </p>
         </div>
         <LoveList />
@@ -641,7 +653,7 @@ function App() {
             Memory Timeline
           </h2>
           <p className="text-purple-600 text-xl">
-            Scroll through our favorite moments together!
+            Lihat momen terindah kita!
           </p>
         </div>
         <OptimizedMemoryTimeline />
@@ -661,8 +673,7 @@ function App() {
               Our Beautiful Memories
             </h2>
             <p className="text-purple-600 text-xl max-w-2xl mx-auto">
-              Every photo tells a story of joy, laughter, and love we've shared
-              together.
+              Semua foto ini kenangan indah yang kita buat bersama. Klik buat liat preview lebih besar!
             </p>
           </motion.div>
 

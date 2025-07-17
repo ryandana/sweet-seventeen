@@ -154,7 +154,7 @@ const LoveList = memo(() => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          100 Things I Love About You 💜
+          100 Hal tentang kamu 💜
         </motion.h2>
 
         <div className="relative w-full max-w-2xl mx-auto">
@@ -269,7 +269,7 @@ const LoveList = memo(() => {
             animate={{ opacity: [0.7, 1, 0.7] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            {currentIndex + 1} of {loveReasons.length} reasons
+            {currentIndex + 1} dari {loveReasons.length} alasan
           </motion.p>
 
           {/* Auto-play toggle */}
@@ -289,7 +289,7 @@ const LoveList = memo(() => {
 
           {/* Hint text */}
           <p className="mt-2 text-sm text-purple-400 opacity-70">
-            Click left or right side to navigate
+            Klik kiri/kanan untuk navigasi, atau tunggu auto-play
           </p>
         </div>
 
