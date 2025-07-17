@@ -61,6 +61,9 @@ function App() {
   const fullText =
     "Happy Birthday 🎉\n\n Semoga kamu selalu sehat, bahagia, dan makin sayang sama aku tiap hari (harus ya! 😝) ✨\n\nSemoga semua yang kamu impiin pelan-pelan jadi nyata ya, dan semoga tahun ini penuh hal-hal indah (termasuk aku 😁) \n\nLove youu, selalu! 💕🎂";
 
+const base = import.meta.env.DEV ? '' : '/sweet-seventeen';
+
+
   const playlist: Song[] = [
     {
       id: 1,
